@@ -20,10 +20,6 @@ function getFilesId()
     return $i;
 }
 
-function utf8_urldecode($str) {
-    $str = preg_replace("/%u([0-9a-f]{3,4})/i","&#x\\1;",urldecode($str));
-    return html_entity_decode($str,null,'UTF-8');;
-}
 
 function createNews()
 {
@@ -33,9 +29,9 @@ function createNews()
         $content = $_GET['content'];
         $title = $_GET['title'];
 
-        $news['time'] = date('H:i  Y.m');
-        $news['content'] = utf8_urldecode($content);
-        $news['title'] = utf8_urldecode($title);
+        $news['time'] = date('H:i  d.m');
+        $news['content'] = ($content);
+        $news['title'] = ($title);
 
         $json = json_encode($news, JSON_UNESCAPED_UNICODE);
 

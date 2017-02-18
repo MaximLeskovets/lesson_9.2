@@ -8,6 +8,6 @@ for($i=1;$i<$countNews;$i++) {
     $title = substr(strstr(strstr($file, "title", false), "}", true), 8, -1);
     $content = substr(strstr(strstr($file, "content", false), ",", true), 10, -1);
 
-    $first= new News("$title");
-    $first->setContent($content);
+    $news[$i]= new News("$title");
+    $news[$i]->setContent($content);
 }

@@ -11,18 +11,26 @@
     <title>Новости</title>
 </head>
 <body>
+<?php
+    for ($j = 1; $j<$countNews;$j++)
+    {
+?>
 
 <b>
     <?php
-    echo $first->getTitle();
+    echo $news[$j]->getTitle();
     ?>
 </b><br/>
 <?php
-    echo $first->getTime();
+    echo $news[$j]->getTime();
 ?>
 <br/>
 <?php
-    echo $first->getContent();
+    echo $news[$j]->getContent();
+?>
+        <br/>
+<?php
+    }
 ?>
 </body>
 </html>
